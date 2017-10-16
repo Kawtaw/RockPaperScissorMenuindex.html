@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<style> <!-- CSS -->
+h1 {}
+.UserUI{ margin: 0px 0px 0px 20px; }
+.PlayerVariablePoint { margin: -95px 0px 0px 100px; }
+.AIVariablePoint { margin: 0px 0px 0px 100px; }
+.QuestionMark { margin: 0px 0px 0px 633px; }
+.AIPaper { margin: -102px 0px 0px 633px; }
+.AIScissor { margin: -102px 0px 0px 633px; }
+.AIRock { margin: -102px 0px 0px 633px; }
+.Paper { margin: 100px 0px 0px 433px; }
+.Scissor { margin: -103px 0px 0px 633px; }
+.Rock { margin: -103px 0px 0px 833px; }
+.PaperButton { margin: -2px 0px 0px 433px ; }
+.ScissorButton { margin: -24px 0px 0px 633px; }
+.RockButton { margin: -24px 0px 0px 833px; }
+.MenuButton { margin: -540px 0px 0px 20px; }
+</style>
+<body background="P8iErUQ.jpg"> <!-- Background Image -->
+<h1 align="middle">Rock Paper Scissors</h1> <!-- Title Text "Rock Paper Scissor" -->
+<div class="UserUI">
+<h2>Win:</h2> <!-- Score for Player Win "YOU" -->
+<h2>Lose:</h2> <!-- Score for Computer Win "AI" -->
+<div class="PlayerVariablePoint"><h2 id="PlayerPointID">0</h2></div> <!-- Variable for Player Win(s) -->
+<div class="AIVariablePoint"><h2 id="ComputerPointID">0</h2></div> <!-- Variable for Computer Win(s) -->
+<h2 align="middle">AI Picks</h2> <!-- AI PICK TEXT! -->
+</div>
+<div class="QuestionMark" > <!-- Question Mark Image -->
+	<img src="question-mark-706906_960_720.jpg" alt="QuestionMark" style="width: 100px; height: 100px;">
+</div>
+<div class="AIPaper"> <!-- AIPaper Image -->
+	<img id="AIPaperID" src="Paperdownload.jpg" alt="AIPaper" style="width: 100px; height: 100px; opacity: 0;">
+</div>
+<div class="AIScissor"> <!-- AIScissor Image -->
+	<img id="AIScissorID" src="Scissor.jpg" alt="AIScissor" style="width: 100px; height: 100px; opacity: 0;">
+</div>
+<div class="AIRock"> <!-- AIRock Image -->
+	<img id="AIRockID" src="Rock.jpg" alt="AIRock" style="width: 100px; height: 100px; opacity: 0;">
+</div>
+<div class="Paper"> <!-- Paper Picture -->
+	<img id="Paper" src="Paperdownload.jpg" alt="Paper" style="width: 100px; height: 100px;">
+</div>
+<div class="Scissor"> <!-- Scissor Picture -->
+	<img id="Scissor" src="Scissor.jpg" alt="Scissor" style="width: 100px; height: 100px;">
+</div>
+<div class="Rock"> <!-- Rock Picture -->
+	<img id="Rock" src="Rock.jpg" alt="Rock" style="width: 100px; height: 100px;">
+</div>
+<div class="PaperButton"> <!-- Paper Button --> 
+	<button onClick="PaperButtonClicked()" style="width: 100px; height: 25px;">Paper</button>
+</div>
+<div class="ScissorButton"> <!-- Scissor Button -->
+	<button onclick="ScissorButtonClicked()"style="width: 100px; height: 25px;">Scissor</button>
+</div>
+<div class="RockButton"> <!-- Rock Button -->
+	<button onClick="RockButtonClicked()" style="width: 100px; height: 25px;">Rock</button>
+</div>
+<div class="MenuButton"><a href="index.html" style="font-size: 40px;">Menu</a></div>
+
+<script> <!-- Javascript -->
+
+	var AIPick = 0;
+	var PlayerPoint = 0;
+	var ComputerPoint = 0;
+	var ButtonClickable = true;
+	function Reset() { <!-- Reset the game -->
+		ButtonClickable = true;
+		document.getElementById("AIPaperID").style.opacity = "0";
+		document.getElementById("AIScissorID").style.opacity = "0";
+		document.getElementById("AIRockID").style.opacity = "0";
+		document.getElementById("Paper").style.opacity = "1";
+		document.getElementById("Scissor").style.opacity = "1";
+		document.getElementById("Rock").style.opacity = "1";
+	}
+	function PaperButtonClicked() {
+		if (ButtonClickable) {
+			ButtonClickable = false;
+			document.getElementById("Scissor").style.opacity = "0";
+			document.getElementById("Rock").style.opacity = "0";
+			setTimeout(Reset, 1500);
+			AIPick = Math.floor(Math.random() * 3 + 1); <!-- Generate random number for Computer pick -->
+			if (AIPick === 3) {
+				PlayerPoint += 1;
+				document.getElementById("AIRockID").style.opacity = "1";
+			} else if (AIPick === 2) {
+				ComputerPoint += 1;
+				document.getElementById("AIScissorID").style.opacity = "1";
+			} else {
+				document.getElementById("AIPaperID").style.opacity = "1";
+			}
+		}
+		document.getElementById("PlayerPointID").innerHTML = PlayerPoint; <!-- PlayerPoint Text -->
+		document.getElementById("ComputerPointID").innerHTML = ComputerPoint; <!-- ComputerPoint Text -->
+	}
+	function ScissorButtonClicked() {
+		if (ButtonClickable) {
+			ButtonClickable = false;
+			document.getElementById("Paper").style.opacity = "0";
+			document.getElementById("Rock").style.opacity = "0";
+			setTimeout(Reset, 1500);
+			AIPick = Math.floor(Math.random() * 3 + 1); <!-- Generate random number for Computer pick -->
+			if (AIPick === 1) {
+				PlayerPoint += 1;
+				document.getElementById("AIPaperID").style.opacity = "1";
+			} else if (AIPick === 3) {
+				ComputerPoint += 1;
+				document.getElementById("AIRockID").style.opacity = "1";
+			} else {
+				document.getElementById("AIScissorID").style.opacity = "1";
+			}
+		}
+		document.getElementById("PlayerPointID").innerHTML = PlayerPoint; <!-- PlayerPoint Text -->
+		document.getElementById("ComputerPointID").innerHTML = ComputerPoint; <!-- ComputerPoint Text -->
+	}
+	function RockButtonClicked() {
+		if (ButtonClickable) {
+			ButtonClickable = false;
+			document.getElementById("Paper").style.opacity = "0";
+			document.getElementById("Scissor").style.opacity = "0";
+			setTimeout(Reset, 1500);
+			AIPick = Math.floor(Math.random() * 3 + 1); <!-- Generate random number for Computer pick -->
+			if (AIPick === 2) {
+				PlayerPoint += 1;
+				document.getElementById("AIScissorID").style.opacity = "1";
+			} else if (AIPick === 1) {
+				ComputerPoint += 1;
+				document.getElementById("AIPaperID").style.opacity = "1";
+			} else {
+				document.getElementById("AIRockID").style.opacity = "1";
+			}
+		}
+		document.getElementById("PlayerPointID").innerHTML = PlayerPoint; <!-- PlayerPoint Text -->
+		document.getElementById("ComputerPointID").innerHTML = ComputerPoint; <!-- ComputerPoint Text -->
+	}
+	
+</script>
+
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+	<style> <!-- CSS Code -->
+		h1 {}
+		.WinLoseText { margin: -610px 0px 0px 0px; }
+		.PlayerVariableWinPoint { margin: -90px 0px 0px 250px; font-size: 200%; }
+		.PlayerVariableLosePoint { margin: -94px 0px 0px 510px; font-size: 200%; }
+		.PlayerVariableWinPoint2 { margin: -94px 0px 0px 936px; font-size: 200%; }
+		.PlayerVariableLosePoint2 { margin: -94px 0px 0px 1166px; font-size: 200%; }
+		.QuestionMarkGreenImage { margin: 0px 0px 0px 265px; }
+		.QuestionMarkGreenImage2 { margin: -144px 0px 0px 935px; }
+		.QuestionMarkImage { margin: -124px 0px 0px 285px; }
+		.QuestionMarkImage2 { margin: -104px 0px 0px 955px; }
+		.ChosenPaper { margin: -104px 0px 0px 285px; }
+		.ChosenScissor { margin: -104px 0px 0px 285px; }
+		.ChosenRock { margin: -104px 0px 0px 285px; }
+		.ChosenPaper2 { margin: -104px 0px 0px 955px; }
+		.ChosenScissor2 { margin: -104px 0px 0px 955px; }
+		.ChosenRock2 { margin: -104px 0px 0px 955px; }
+		.PlayerGreenImage { margin: 100px 0px 0px 145px; }
+		.PlayerGreenImage2 { margin: -144px 0px 0px 815px;}
+		.Paper { margin: -124px 0px 0px 165px; }
+		.Scissor { margin: -104px 0px 0px 285px; }
+		.Rock { margin: -104px 0px 0px 405px; }
+		.Paper2 { margin: -104px 0px 0px 835px; }
+		.Scissor2 { margin: -104px 0px 0px 955px; }
+		.Rock2 { margin: -104px 0px 0px 1075px; }
+		.KeyControlText  { margin: 0px 0px 0px 0px; font-size: 200%; }
+		.MenuButton { margin: -600px 0px 0px 20px; }
+	</style>
+	<body>
+		<img src="redblue.jpg" alt="RedBlueImage" style="width: 1340px; height: 615px;"> <!-- Background Image -->
+		<div class="WinLoseText"><h1>&emsp;&emsp;&emsp;&emsp;&emsp;Win:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Lose:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Win:&emsp;&emsp;&emsp;&emsp;&emsp;Lose:<h1></div><!-- Win Lose Text -->
+		<div class="PlayerVariableWinPoint"><h2 id="PlayerOneWinID">0</h2></div> <!-- Variable for Player Win -->
+		<div class="PlayerVariableLosePoint"><h2 id="PlayerOneLoseID">0</h2></div> <!-- Variable for Player Lose -->
+		<div class="PlayerVariableWinPoint2"><h2 id="PlayerTwoWinID">0</h2></div> <!-- Variable for Player Win2 -->
+		<div class="PlayerVariableLosePoint2"><h2 id="PlayerTwoLoseID">0</h2></div> <!-- Variable for Player Lose2 -->
+		<div class="QuestionMarkGreenImage"><img id="QuestionMarkOneGreenImage" src="green.jpg" alt="QuestionMarkGreenImageAlt" style="width: 140px; height: 140px; opacity: 0;"></div><!-- First Question Mark GREEN Image-->
+		<div class="QuestionMarkGreenImage2"><img id="QuestionMarkTwoGreenImage" src="green.jpg" alt="QuestionMarkGreenImageAlt2" style="width: 140px; height: 140px; opacity: 0;"></div><!-- Second Question Mark GREEN Image-->
+		<div class="QuestionMarkImage"><img src="question-mark-706906_960_720.jpg" alt="QuestionMarkImageAlt" style="width: 100px; height: 100px;"></div> <!-- QuestionMarkImage -->
+		<div class="QuestionMarkImage2"><img src="question-mark-706906_960_720.jpg" alt="QuestionMarkImage2Alt" style="width: 100px; height: 100px;"></div> <!-- QuestionMarkImage2 -->
+		<div class="ChosenPaper"><img id="ChosenPaperID" src="Paperdownload.jpg" alt="PaperAlt" style="width: 100px; height: 100px; opacity: 0;"></div> <!-- Chosen Paper Image -->
+		<div class="ChosenScissor"><img id="ChosenScissorID" src="Scissor.jpg" alt="ScissorAlt" style="width: 100px; height: 100px; opacity: 0;"></div> <!-- Chosen Scissor Image -->
+		<div class="ChosenRock"><img id="ChosenRockID" src="Rock.jpg" alt="RockAlt" style="width: 100px; height: 100px; opacity: 0;"></div> <!-- Chosen Rock Image -->
+		<div class="ChosenPaper2"><img id="ChosenPaperID2" src="Paperdownload.jpg" alt="PaperAlt" style="width: 100px; height: 100px; opacity: 0;"></div> <!-- Chosen Paper Image 2-->
+		<div class="ChosenScissor2"><img id="ChosenScissorID2" src="Scissor.jpg" alt="ScissorAlt" style="width: 100px; height: 100px; opacity: 0;"></div> <!-- Chosen Scissor Image 2-->
+		<div class="ChosenRock2"><img id="ChosenRockID2" src="Rock.jpg" alt="RockAlt" style="width: 100px; height: 100px; opacity: 0;"></div> <!-- Chosen Rock Image 2-->
+		<div class="PlayerGreenImage"><img id="PlrOneGreenImage" src="green.jpg" alt="PlayerGreenImageAlt" style="width: 380px; height: 140px; opacity: 0;"></div><!-- First Player GREEN Image-->
+		<div class="PlayerGreenImage2"><img id="PlrTwoGreenImage" src="green.jpg" alt="PlayerGreenImageAlt2" style="width: 380px; height: 140px; opacity: 0;"></div><!-- Second Player GREEN Image-->
+		<div class="Paper"><img id="PaperID" src="Paperdownload.jpg" alt="PaperAlt" style="width: 100px; height: 100px;"></div> <!-- Paper Image -->
+		<div class="Scissor"><img id="ScissorID" src="Scissor.jpg" alt="ScissorAlt" style="width: 100px; height: 100px;"></div> <!-- Scissor Image -->
+		<div class="Rock"><img id="RockID" src="Rock.jpg" alt="RockAlt" style="width: 100px; height: 100px;"></div> <!-- Rock Image -->
+		<div class="Paper2"><img id="PaperID2" src="Paperdownload.jpg" alt="PaperAlt" style="width: 100px; height: 100px;"></div> <!-- Paper2 Image -->
+		<div class="Scissor2"><img id="ScissorID2"src="Scissor.jpg" alt="ScissorAlt" style="width: 100px; height: 100px;"></div> <!-- Scissor2 Image -->
+		<div class="Rock2"><img id="RockID2" src="Rock.jpg" alt="RockAlt" style="width: 100px; height: 100px;"></div> <!-- Rock2 Image -->
+		<div class="KeyControlText"><h1>&emsp;&emsp;&emsp;A&emsp;&nbsp;S&emsp;&nbspD&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;4&emsp;&nbsp;5&emsp;&nbsp;6<h1></div><!-- Key Code Control Text -->
+		<div class="MenuButton"><a href="index.html" style="font-size: 40px;">Menu</a></div>
+	</body>
+	<script> <!-- JavaScript Code -->
+		var PlrOneChoice = 0;
+		var PlrTwoChoice = 4;
+		var PlrOneWin = 0;
+		var PlrOneLose = 0;
+		var PlrTwoWin = 0;
+		var PlrTwoLose = 0;
+		var ButtonClickable = true;
+		var ButtonClickable2 = true;
+		
+		function Reset() { <!-- Reset The Game -->
+			PlrOneChoice = 0;
+			PlrTwoChoice = 4;
+			document.getElementById("PaperID").style.opacity = "1";
+			document.getElementById("ScissorID").style.opacity = "1";
+			document.getElementById("RockID").style.opacity = "1";
+			document.getElementById("PaperID2").style.opacity = "1";
+			document.getElementById("ScissorID2").style.opacity = "1";
+			document.getElementById("RockID2").style.opacity = "1";
+			document.getElementById("ChosenPaperID").style.opacity = "0";
+			document.getElementById("ChosenPaperID2").style.opacity = "0";
+			document.getElementById("ChosenScissorID").style.opacity = "0";
+			document.getElementById("ChosenScissorID2").style.opacity = "0";
+			document.getElementById("ChosenRockID").style.opacity = "0";
+			document.getElementById("ChosenRockID2").style.opacity = "0";
+			ButtonClickable = true;
+			ButtonClickable2 = true;
+		}
+		document.onkeydown = function(key) {
+			if (key.keyCode == 65 && ButtonClickable) {
+				ButtonClickable = false;
+				PlrOneChoice = 1;
+				document.getElementById("PlrOneGreenImage").style.opacity = "1";
+				document.getElementById("QuestionMarkTwoGreenImage").style.opacity = "1";
+				GameStart();
+			}
+			if (key.keyCode == 83 && ButtonClickable) {
+				ButtonClickable = false;
+				PlrOneChoice = 2;
+				document.getElementById("PlrOneGreenImage").style.opacity = "1";
+				document.getElementById("QuestionMarkTwoGreenImage").style.opacity = "1";
+				GameStart();
+			}
+			if (key.keyCode == 68 && ButtonClickable) {
+				ButtonClickable = false;
+				PlrOneChoice = 3;
+				document.getElementById("PlrOneGreenImage").style.opacity = "1";
+				document.getElementById("QuestionMarkTwoGreenImage").style.opacity = "1";
+				GameStart();
+			}
+			if (key.keyCode == 100 && ButtonClickable2) {
+				ButtonClickable2 = false;
+				PlrTwoChoice = 1;
+				document.getElementById("PlrTwoGreenImage").style.opacity = "1";
+				document.getElementById("QuestionMarkOneGreenImage").style.opacity = "1";
+				GameStart();
+			}
+			if (key.keyCode == 101 && ButtonClickable2) {
+				ButtonClickable2 = false;
+				PlrTwoChoice = 2;
+				document.getElementById("PlrTwoGreenImage").style.opacity = "1";
+				document.getElementById("QuestionMarkOneGreenImage").style.opacity = "1";
+				GameStart();
+			}
+			if (key.keyCode == 102 && ButtonClickable2) {
+				ButtonClickable2 = false;
+				PlrTwoChoice = 3;
+				document.getElementById("PlrTwoGreenImage").style.opacity = "1";
+				document.getElementById("QuestionMarkOneGreenImage").style.opacity = "1";
+				GameStart();
+			}
+		}
+		function GameStart() {
+			if (PlrOneChoice > 0 && PlrOneChoice < 4 && PlrTwoChoice > 0 && PlrTwoChoice < 4) {
+				if (PlrOneChoice == PlrTwoChoice) { <!-- Game is a TIE! -->
+					document.getElementById("PlrOneGreenImage").style.opacity = "0";
+					document.getElementById("QuestionMarkTwoGreenImage").style.opacity = "0";
+					document.getElementById("PlrTwoGreenImage").style.opacity = "0";
+					document.getElementById("QuestionMarkOneGreenImage").style.opacity = "0";
+					document.getElementById("PaperID").style.opacity = "0";
+					document.getElementById("ScissorID").style.opacity = "0";
+					document.getElementById("RockID").style.opacity = "0";
+					document.getElementById("PaperID2").style.opacity = "0";
+					document.getElementById("ScissorID2").style.opacity = "0";
+					document.getElementById("RockID2").style.opacity = "0";
+					if (PlrOneChoice == 1) {
+						document.getElementById("ChosenPaperID").style.opacity = "1";
+						document.getElementById("ChosenPaperID2").style.opacity = "1";
+						document.getElementById("PaperID").style.opacity = "1";
+						document.getElementById("PaperID2").style.opacity = "1";
+						setTimeout(Reset, 1500);
+					} else if (PlrOneChoice == 2) {
+						document.getElementById("ChosenScissorID").style.opacity = "1";
+						document.getElementById("ChosenScissorID2").style.opacity = "1";
+						document.getElementById("ScissorID").style.opacity = "1";
+						document.getElementById("ScissorID2").style.opacity = "1";
+						setTimeout(Reset, 1500);
+					} else if (PlrOneChoice == 3) {
+						document.getElementById("ChosenRockID").style.opacity = "1";
+						document.getElementById("ChosenRockID2").style.opacity = "1";
+						document.getElementById("RockID").style.opacity = "1";
+						document.getElementById("RockID2").style.opacity = "1";
+						setTimeout(Reset, 1500);
+					}
+					
+				} else if (PlrOneChoice == 1 && PlrTwoChoice == 2 || PlrOneChoice == 2 && PlrTwoChoice == 3 || PlrOneChoice == 3 && PlrTwoChoice == 1) { <!-- Player One Lost This Round! -->
+					document.getElementById("PlrOneGreenImage").style.opacity = "0";
+					document.getElementById("QuestionMarkTwoGreenImage").style.opacity = "0";
+					document.getElementById("PlrTwoGreenImage").style.opacity = "0";
+					document.getElementById("QuestionMarkOneGreenImage").style.opacity = "0";
+					document.getElementById("PaperID").style.opacity = "0";
+					document.getElementById("ScissorID").style.opacity = "0";
+					document.getElementById("RockID").style.opacity = "0";
+					document.getElementById("PaperID2").style.opacity = "0";
+					document.getElementById("ScissorID2").style.opacity = "0";
+					document.getElementById("RockID2").style.opacity = "0";
+					if (PlrOneChoice == 1 && PlrTwoChoice == 2) {
+						PlrTwoWin += 1;
+						PlrOneLose += 1;
+						document.getElementById("ChosenScissorID").style.opacity = "1";
+						document.getElementById("ChosenPaperID2").style.opacity = "1";
+						document.getElementById("PaperID").style.opacity = "1";
+						document.getElementById("ScissorID2").style.opacity = "1";
+						document.getElementById("PlayerOneLoseID").innerHTML = PlrOneLose; <!-- PlayerPoint Text -->
+						document.getElementById("PlayerTwoWinID").innerHTML = PlrTwoWin; <!-- PlayerPoint Text -->
+						setTimeout(Reset, 1500);
+					} else if (PlrOneChoice == 2 && PlrTwoChoice == 3) {
+						PlrTwoWin += 1;
+						PlrOneLose += 1;
+						document.getElementById("ChosenRockID").style.opacity = "1";
+						document.getElementById("ChosenScissorID2").style.opacity = "1";
+						document.getElementById("ScissorID").style.opacity = "1";
+						document.getElementById("RockID2").style.opacity = "1";
+						document.getElementById("PlayerOneLoseID").innerHTML = PlrOneLose; <!-- PlayerPoint Text -->
+						document.getElementById("PlayerTwoWinID").innerHTML = PlrTwoWin; <!-- PlayerPoint Text -->
+						setTimeout(Reset, 1500);
+					} else if (PlrOneChoice == 3 && PlrTwoChoice == 1) {
+						PlrTwoWin += 1;
+						PlrOneLose += 1;
+						document.getElementById("ChosenPaperID").style.opacity = "1";
+						document.getElementById("ChosenRockID2").style.opacity = "1";
+						document.getElementById("RockID").style.opacity = "1";
+						document.getElementById("PaperID2").style.opacity = "1";
+						document.getElementById("PlayerOneLoseID").innerHTML = PlrOneLose; <!-- PlayerPoint Text -->
+						document.getElementById("PlayerTwoWinID").innerHTML = PlrTwoWin; <!-- PlayerPoint Text -->
+						setTimeout(Reset, 1500);
+					}
+				} else { <!-- Player One Won -->
+					document.getElementById("PlrOneGreenImage").style.opacity = "0";
+					document.getElementById("QuestionMarkTwoGreenImage").style.opacity = "0";
+					document.getElementById("PlrTwoGreenImage").style.opacity = "0";
+					document.getElementById("QuestionMarkOneGreenImage").style.opacity = "0";
+					document.getElementById("PaperID").style.opacity = "0";
+					document.getElementById("ScissorID").style.opacity = "0";
+					document.getElementById("RockID").style.opacity = "0";
+					document.getElementById("PaperID2").style.opacity = "0";
+					document.getElementById("ScissorID2").style.opacity = "0";
+					document.getElementById("RockID2").style.opacity = "0";
+					if (PlrOneChoice == 1 && PlrTwoChoice == 3) {
+						PlrOneWin += 1;
+						PlrTwoLose += 1;
+						document.getElementById("ChosenRockID").style.opacity = "1";
+						document.getElementById("ChosenPaperID2").style.opacity = "1";
+						document.getElementById("PaperID").style.opacity = "1";
+						document.getElementById("RockID2").style.opacity = "1";
+						document.getElementById("PlayerOneWinID").innerHTML = PlrOneWin; <!-- PlayerPoint Text -->
+						document.getElementById("PlayerTwoLoseID").innerHTML = PlrTwoLose; <!-- PlayerPoint Text -->
+						setTimeout(Reset, 1500);
+					} else if (PlrOneChoice == 2 && PlrTwoChoice == 1) {
+						PlrOneWin += 1;
+						PlrTwoLose += 1;
+						document.getElementById("ChosenPaperID").style.opacity = "1";
+						document.getElementById("ChosenScissorID2").style.opacity = "1";
+						document.getElementById("ScissorID").style.opacity = "1";
+						document.getElementById("PaperID2").style.opacity = "1";
+						document.getElementById("PlayerOneWinID").innerHTML = PlrOneWin; <!-- PlayerPoint Text -->
+						document.getElementById("PlayerTwoLoseID").innerHTML = PlrTwoLose; <!-- PlayerPoint Text -->
+						setTimeout(Reset, 1500);
+					} else if (PlrOneChoice == 3 && PlrTwoChoice == 2) {
+						PlrOneWin += 1;
+						PlrTwoLose += 1;
+						document.getElementById("ChosenScissorID").style.opacity = "1";
+						document.getElementById("ChosenRockID2").style.opacity = "1";
+						document.getElementById("RockID").style.opacity = "1";
+						document.getElementById("ScissorID2").style.opacity = "1";
+						document.getElementById("PlayerOneWinID").innerHTML = PlrOneWin; <!-- PlayerPoint Text -->
+						document.getElementById("PlayerTwoLoseID").innerHTML = PlrTwoLose; <!-- PlayerPoint Text -->
+						setTimeout(Reset, 1500);
+					}
+				}
+			}
+		}
+	</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
